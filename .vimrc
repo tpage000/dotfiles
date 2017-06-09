@@ -156,6 +156,9 @@ set textwidth=80                " wrap at 80 chars by default
 scriptencoding utf-8
 set encoding=utf8
 
+" Delete range without moving cursor:
+com! -range D <line1>,<line2>d | norm <C-o>
+
 " ---------------------------------------------------------------------------
 "  Strip all trailing whitespace in file
 " ---------------------------------------------------------------------------
