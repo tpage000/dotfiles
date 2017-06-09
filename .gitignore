@@ -38,5 +38,6 @@ Thumbs.db
 # Unix / Vim #
 ##############
 *.swp
+*.swo
 
 node_modules
