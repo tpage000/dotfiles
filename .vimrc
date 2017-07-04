@@ -3,7 +3,11 @@
 " ---------------------------------------------------------------------------
 
 set nocompatible                  " Vim stuff, not Vi stuff.
-filetype off
+
+" --------------------------------------------------------------------------/
+" Plugin Manager
+" ---------------------------------------------------------------------------
+filetype off                      " Needed for Vundle
 
 " Vundle Installation:
 let VundleExists=1
@@ -26,25 +30,22 @@ Plugin 'gmarik/Vundle.vim'        " let Vundle manage Vundle, required
 " Plugins
 " ---------------------------------------------------------------------------
 " Themes
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'ChrisKempson/Vim-Tomorrow-Theme'
-Plugin 'croaky/vim-colors-github'
 Plugin 'sjl/badwolf'
 Plugin 'morhetz/gruvbox'
 Plugin 'joshdick/onedark.vim'
-
+" Other
 Plugin 'airblade/vim-gitgutter'          " shows a git diff in the gutter
 Plugin 'bling/vim-airline'               " status bar/tabline
 Plugin 'kien/ctrlp.vim'                  " Fuzzy file, buffer, mru, tag, etc finder
 Plugin 'moll/vim-node'                   " Tools for Node
 Plugin 'scrooloose/nerdtree'             " A tree explorer plugin for navigating the filesystem
 Plugin 'tpope/vim-commentary'            " Use gcc to comment out a line
-Plugin 'tpope/vim-haml'                  " runtime files for Haml, Sass, and SCSS
 Plugin 'mattn/emmet-vim'                 " boilerplate shortcuts
 Plugin 'pangloss/vim-javascript'         " javascript highlighting
 Plugin 'chemzqm/vim-jsx-improve'         " jsx highlighting
 Plugin 'elzr/vim-json'
-" Plugin 'tpope/vim-rails'                 " Ruby on Rails power tools
+Plugin 'tpope/vim-rails'                 " Ruby on Rails power tools
 
 " All plugins must be added before vundle#end
 call vundle#end()
@@ -62,12 +63,42 @@ endif
 let NERDTreeHighlightCursorline=1
 let NERDTreeIgnore = ['tmp', '.yardoc', 'pkg']
 
+" ---------------------------------------------------------------------------
+" Ctrl-P
+" ---------------------------------------------------------------------------
+
+let g:ctrlp_working_path_mode = 'a'    " sets the working directory for ctrl
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
+
+" ---------------------------------------------------------------------------
+" Airline symbols
+" ---------------------------------------------------------------------------
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+
+" unicode symbols
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
+
 " PLUGINS
 " :PluginList                     - list configured plugins
 " :PluginInstall                  - install plugins
 " :PluginUpdate                   - update plugin list (if removing plugins)
 " :PluginClean(!)                 - confirm (or auto-approve) removal of unused plugins
 
+" ////////////////////////////////////////////////////////////////////////////
+" ////////////////////////////////////////////////////////////////////////////
 " ////////////////////////////////////////////////////////////////////////////
 "-----------------------------------------------------------------------------
 "                              KEYMAPS
@@ -115,6 +146,8 @@ com! -range D <line1>,<line2>d | norm <C-o>
 nnoremap <esc> :noh<CR><esc>
 
 " ////////////////////////////////////////////////////////////////////////////
+" ////////////////////////////////////////////////////////////////////////////
+" ////////////////////////////////////////////////////////////////////////////
 " ----------------------------------------------------------------------------
 "                                        UI
 " ----------------------------------------------------------------------------
@@ -126,10 +159,10 @@ filetype plugin indent on         " Turn on file type detection
 "-----------------------------------------
 set t_Co=256
 set background=dark
-colorscheme gruvbox 
+colorscheme onedark 
 
 " ----------------------------------------------------------------------------
-" Visual Cues
+" Visuals 
 " ----------------------------------------------------------------------------
 set ruler                         " Show cursor position
 set number                        " Show line numbers
@@ -176,7 +209,12 @@ set textwidth=80                " wrap at 80 chars by default
 scriptencoding utf-8
 set encoding=utf8
 
-
+"/////////////////////////////////////////////////////////////////////////////
+"/////////////////////////////////////////////////////////////////////////////
+"/////////////////////////////////////////////////////////////////////////////
+" ---------------------------------------------------------------------------
+" OTHER
+" ---------------------------------------------------------------------------
 " ---------------------------------------------------------------------------
 "  Strip all trailing whitespace in file
 " ---------------------------------------------------------------------------
@@ -202,30 +240,3 @@ if ! has('gui_running')
     augroup END
 endif
 
-" ---------------------------------------------------------------------------
-" Ctrl-P
-" ---------------------------------------------------------------------------
-
-let g:ctrlp_working_path_mode = 'a'    " sets the working directory for ctrl
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
-
-" ---------------------------------------------------------------------------
-" Airline symbols
-" ---------------------------------------------------------------------------
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-
-" unicode symbols
-let g:airline_left_sep = '»'
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '«'
-let g:airline_right_sep = '◀'
-let g:airline_symbols.linenr = '␊'
-let g:airline_symbols.linenr = '␤'
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.paste = 'Þ'
-let g:airline_symbols.paste = '∥'
-let g:airline_symbols.whitespace = 'Ξ'
