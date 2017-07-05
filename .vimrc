@@ -59,20 +59,15 @@ endif
 "----------------------------------------------------
 "                    Plugin Options
 "----------------------------------------------------
-
+" NERDTree
 let NERDTreeHighlightCursorline=1
 let NERDTreeIgnore = ['tmp', '.yardoc', 'pkg']
 
-" ---------------------------------------------------------------------------
 " Ctrl-P
-" ---------------------------------------------------------------------------
-
 let g:ctrlp_working_path_mode = 'a'    " sets the working directory for ctrl
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
 
-" ---------------------------------------------------------------------------
 " Airline symbols
-" ---------------------------------------------------------------------------
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
@@ -91,6 +86,7 @@ let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'
 let g:airline_symbols.whitespace = 'Ξ'
 
+" ------- Plugin Commands reference -----------------------------------------
 " PLUGINS
 " :PluginList                     - list configured plugins
 " :PluginInstall                  - install plugins
