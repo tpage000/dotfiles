@@ -34,6 +34,7 @@ Plugin 'ChrisKempson/Vim-Tomorrow-Theme'
 Plugin 'sjl/badwolf'
 Plugin 'morhetz/gruvbox'
 Plugin 'joshdick/onedark.vim'
+Plugin 'rakr/vim-one'
 " Other
 Plugin 'airblade/vim-gitgutter'          " shows a git diff in the gutter
 Plugin 'bling/vim-airline'               " status bar/tabline
@@ -62,6 +63,7 @@ endif
 " NERDTree
 let NERDTreeHighlightCursorline=1
 let NERDTreeIgnore = ['tmp', '.yardoc', 'pkg']
+let g:NERDTreeWinSize = 20
 
 " Ctrl-P
 let g:ctrlp_working_path_mode = 'a'    " sets the working directory for ctrl
@@ -141,6 +143,13 @@ com! -range D <line1>,<line2>d | norm <C-o>
 " remove search highlighting when press esc
 nnoremap <esc> :noh<CR><esc>
 
+" surround word with single quotes
+nnoremap <leader>q' ciw''<esc>P
+" surround word with double quotes
+nnoremap <leader>q" ciw""<esc>P
+" remove quotes from word
+nnoremap <leader>qd daW"=substitute(@@,"'\\\|\"","","g")<CR>P
+
 " ////////////////////////////////////////////////////////////////////////////
 " ////////////////////////////////////////////////////////////////////////////
 " ////////////////////////////////////////////////////////////////////////////
@@ -149,14 +158,6 @@ nnoremap <esc> :noh<CR><esc>
 " ----------------------------------------------------------------------------
 syntax enable                     " Turn on syntax highlighting
 filetype plugin indent on         " Turn on file type detection
-
-"-----------------------------------------
-" Color Scheme
-"-----------------------------------------
-set t_Co=256
-set background=dark
-colorscheme onedark 
-
 " ----------------------------------------------------------------------------
 " Visuals 
 " ----------------------------------------------------------------------------
@@ -235,4 +236,15 @@ if ! has('gui_running')
     au InsertLeave * set timeoutlen=1000
     augroup END
 endif
+
+
+
+
+"-----------------------------------------
+" Color Scheme
+"-----------------------------------------
+colorscheme one 
+set t_Co=256
+set background=dark
+
 
