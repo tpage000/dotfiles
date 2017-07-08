@@ -70,14 +70,11 @@ autocmd FileType html,css EmmetInstall
 let g:ctrlp_working_path_mode = 'a'    " sets the working directory
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
 
-" ////////////////////////////////////////////////////////////////////////////
-" ////////////////////////////////////////////////////////////////////////////
-" ////////////////////////////////////////////////////////////////////////////
 "-----------------------------------------------------------------------------
 "                              KEYMAPS
 " ----------------------------------------------------------------------------
 
-" Commentary: type \\ to toggle commenting or uncommenting
+" Commentary: type \\ to toggle comments
 noremap <leader>\ :Commentary<cr>
 
 " NERDTree: open nerdtree with with \n
@@ -87,20 +84,14 @@ noremap <leader>n :NERDTreeToggle<cr>
 noremap <leader>p :CtrlP<cr>           " to find files using ctrlp
 noremap <leader>b :CtrlPBuffer<cr>     " to find buffers using ctrlp
 
-" ---------------------
-" Navigation
-" ---------------------
-" go to line 144: 144 Enter
+" Navigation - go to line 144: 144 Enter
 nnoremap <CR> G
 
-" window navigation - use <tab>
-" tab then any other window command ...
-" example: 
-" TAB h navigate to left window
-" TAB j navigate to lower window
+" Window navigation - use TAB then any other window command ...
+" example: TAB h navigate to left window, TAB j navigate to lower window
 noremap <tab> <C-w>
 
-" tab-tab to cycle through windows
+" TAB-TAB to cycle through windows
 noremap <tab><tab> <C-w><C-w>
 
 " --------------------
@@ -119,17 +110,14 @@ nnoremap <leader>q" ciw""<esc>P
 " remove quotes from word \qd
 nnoremap <leader>qd daW"=substitute(@@,"'\\\|\"","","g")<CR>P
 
-" ////////////////////////////////////////////////////////////////////////////
-" ////////////////////////////////////////////////////////////////////////////
-" ////////////////////////////////////////////////////////////////////////////
 " ----------------------------------------------------------------------------
 "                                        UI
 " ----------------------------------------------------------------------------
+
 syntax enable                     " Turn on syntax highlighting
 filetype plugin indent on         " Turn on file type detection
-" ------------------
+
 " Visuals 
-" ------------------
 set ruler                         " Show cursor position
 set number                        " Show line numbers
 set noshowmode                    " use airline.vim status bar instead
@@ -160,9 +148,7 @@ endif
 highlight NonText guifg=#4a4a59
 highlight SpecialKey guifg=#4a4a59
 
-" ----------------------
 " Text Formatting
-" ----------------------
 set autoindent                  " indent new lines
 set smartindent                 " be smart about automatic indentation
 set nowrap                      " do not wrap lines
@@ -175,17 +161,11 @@ set textwidth=80                " wrap at 80 chars by default
 scriptencoding utf-8
 set encoding=utf8
 
-"/////////////////////////////////////////////////////////////////////////////
-"/////////////////////////////////////////////////////////////////////////////
-"/////////////////////////////////////////////////////////////////////////////
 " ---------------------------------------------------------------------------
 " OTHER
 " ---------------------------------------------------------------------------
-" ----------------------------------------
-"  Strip all trailing whitespace in file
-" ----------------------------------------
 
-" http://stackoverflow.com/questions/356126/how-can-you-automatically-remove-trailing-whitespace-in-vim/1618401#1618401
+"  Strip all trailing whitespace in file
 fun! <SID>StripTrailingWhitespaces()
     let l = line(".")
     let c = col(".")
@@ -193,10 +173,7 @@ fun! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfun
 
-" ----------------------------------------
 " Speed up transition from modes
-" ----------------------------------------
-
 if ! has('gui_running')
   set ttimeoutlen=10
   augroup FastEscape
@@ -206,9 +183,9 @@ if ! has('gui_running')
     augroup END
 endif
 
-"-----------------------------------------
-" Color Scheme
-"-----------------------------------------
+"----------------------------------------------------------------------------
+" COLOR SCHEME
+"----------------------------------------------------------------------------
 colorscheme one 
 set t_Co=256
 set background=dark
