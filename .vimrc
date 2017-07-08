@@ -30,23 +30,20 @@ Plugin 'gmarik/Vundle.vim'        " let Vundle manage Vundle, required
 " Plugins
 " ---------------------------------------------------------------------------
 " Themes
-Plugin 'ChrisKempson/Vim-Tomorrow-Theme'
 Plugin 'sjl/badwolf'
 Plugin 'morhetz/gruvbox'
-Plugin 'joshdick/onedark.vim'
 Plugin 'rakr/vim-one'
 " Other
-Plugin 'airblade/vim-gitgutter'          " shows a git diff in the gutter
-Plugin 'bling/vim-airline'               " status bar/tabline
+Plugin 'scrooloose/nerdtree'             " Navigate the filesystem
+Plugin 'tpope/vim-commentary'            " Comment / uncomment lines and selections
+Plugin 'bling/vim-airline'               " Status bar
+Plugin 'pangloss/vim-javascript'         " Javascript highlighting
+Plugin 'chemzqm/vim-jsx-improve'         " JSX highlighting
+Plugin 'mattn/emmet-vim'                 " Boilerplate shortcuts
+Plugin 'airblade/vim-gitgutter'          " Shows a git diff in the gutter
 Plugin 'kien/ctrlp.vim'                  " Fuzzy file, buffer, mru, tag, etc finder
-Plugin 'moll/vim-node'                   " Tools for Node
-Plugin 'scrooloose/nerdtree'             " A tree explorer plugin for navigating the filesystem
-Plugin 'tpope/vim-commentary'            " Use gcc to comment out a line
-Plugin 'mattn/emmet-vim'                 " boilerplate shortcuts
-Plugin 'pangloss/vim-javascript'         " javascript highlighting
-Plugin 'chemzqm/vim-jsx-improve'         " jsx highlighting
-Plugin 'elzr/vim-json'
-Plugin 'tpope/vim-rails'                 " Ruby on Rails power tools
+Plugin 'moll/vim-node'                   " Node stuff
+Plugin 'tpope/vim-rails'                 " Rails stuff
 
 " All plugins must be added before vundle#end
 call vundle#end()
@@ -64,6 +61,10 @@ endif
 let NERDTreeHighlightCursorline=1
 let NERDTreeIgnore = ['tmp', '.yardoc', 'pkg']
 let g:NERDTreeWinSize = 20
+
+" emmet - enable just for html and css
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
 
 " Ctrl-P
 let g:ctrlp_working_path_mode = 'a'    " sets the working directory for ctrl
@@ -105,38 +106,32 @@ let g:airline_symbols.whitespace = 'Ξ'
 " Commentary: type \\ to toggle commenting or uncommenting
 noremap <leader>\ :Commentary<cr>
 
-" NERDTree: open nerdtree with with leader + n    \n
+" NERDTree: open nerdtree with with \n
 noremap <leader>n :NERDTreeToggle<cr>
 
 " CtrlP: \p and \b 
 noremap <leader>p :CtrlP<cr>           " to find files using ctrlp
 noremap <leader>b :CtrlPBuffer<cr>     " to find buffers using ctrlp
 
-" ----------------------------------------------------------------------------
+" ---------------------
 " Navigation
-" ----------------------------------------------------------------------------
+" ---------------------
 " go to line 144: 144 Enter
 nnoremap <CR> G
 
-" create horizontal & vertical splits
-noremap <leader>h :sp<cr>
-noremap <leader>v :vsp<cr>
-
-" window navigation - one way to do it: ctrl+direction
-noremap <C-h> <C-w>h
-noremap <C-j> <C-w>j
-noremap <C-k> <C-w>k
-noremap <C-l> <C-w>l
-
 " window navigation - use <tab>
 " tab then any other window command ...
+" example: 
+" TAB h navigate to left window
+" TAB j navigate to lower window
 noremap <tab> <C-w>
-" tab tab to cycle through windows
+
+" tab-tab to cycle through windows
 noremap <tab><tab> <C-w><C-w>
 
-" ----------------------------
+" --------------------
 " Other Useful Maps
-" ----------------------------
+" --------------------
 " Delete range without moving cursor:
 com! -range D <line1>,<line2>d | norm <C-o>
 
@@ -158,9 +153,9 @@ nnoremap <leader>qd daW"=substitute(@@,"'\\\|\"","","g")<CR>P
 " ----------------------------------------------------------------------------
 syntax enable                     " Turn on syntax highlighting
 filetype plugin indent on         " Turn on file type detection
-" ----------------------------------------------------------------------------
+" ------------------
 " Visuals 
-" ----------------------------------------------------------------------------
+" ------------------
 set ruler                         " Show cursor position
 set number                        " Show line numbers
 set noshowmode                    " use airline.vim status bar instead
@@ -191,9 +186,9 @@ endif
 highlight NonText guifg=#4a4a59
 highlight SpecialKey guifg=#4a4a59
 
-" ----------------------------------------------------------------------------
+" ----------------------
 " Text Formatting
-" ----------------------------------------------------------------------------
+" ----------------------
 set autoindent                  " indent new lines
 set smartindent                 " be smart about automatic indentation
 set nowrap                      " do not wrap lines
@@ -212,9 +207,9 @@ set encoding=utf8
 " ---------------------------------------------------------------------------
 " OTHER
 " ---------------------------------------------------------------------------
-" ---------------------------------------------------------------------------
+" ----------------------------------------
 "  Strip all trailing whitespace in file
-" ---------------------------------------------------------------------------
+" ----------------------------------------
 
 " http://stackoverflow.com/questions/356126/how-can-you-automatically-remove-trailing-whitespace-in-vim/1618401#1618401
 fun! <SID>StripTrailingWhitespaces()
@@ -224,9 +219,9 @@ fun! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfun
 
-" ---------------------------------------------------------------------------
+" ----------------------------------------
 " Speed up transition from modes
-" ---------------------------------------------------------------------------
+" ----------------------------------------
 
 if ! has('gui_running')
   set ttimeoutlen=10
@@ -237,14 +232,10 @@ if ! has('gui_running')
     augroup END
 endif
 
-
-
-
 "-----------------------------------------
 " Color Scheme
 "-----------------------------------------
 colorscheme one 
 set t_Co=256
 set background=dark
-
 
