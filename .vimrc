@@ -62,39 +62,13 @@ let NERDTreeHighlightCursorline=1
 let NERDTreeIgnore = ['tmp', '.yardoc', 'pkg']
 let g:NERDTreeWinSize = 20
 
-" emmet - enable just for html and css
+" Emmet - enable just for html and css
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
 
 " Ctrl-P
-let g:ctrlp_working_path_mode = 'a'    " sets the working directory for ctrl
+let g:ctrlp_working_path_mode = 'a'    " sets the working directory
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
-
-" Airline symbols
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-
-" unicode symbols
-let g:airline_left_sep = '»'
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '«'
-let g:airline_right_sep = '◀'
-let g:airline_symbols.linenr = '␊'
-let g:airline_symbols.linenr = '␤'
-let g:airline_symbols.linenr = '¶'
-let g:airline_symbols.branch = '⎇'
-let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.paste = 'Þ'
-let g:airline_symbols.paste = '∥'
-let g:airline_symbols.whitespace = 'Ξ'
-
-" ------- Plugin Commands reference -----------------------------------------
-" PLUGINS
-" :PluginList                     - list configured plugins
-" :PluginInstall                  - install plugins
-" :PluginUpdate                   - update plugin list (if removing plugins)
-" :PluginClean(!)                 - confirm (or auto-approve) removal of unused plugins
 
 " ////////////////////////////////////////////////////////////////////////////
 " ////////////////////////////////////////////////////////////////////////////
@@ -138,11 +112,11 @@ com! -range D <line1>,<line2>d | norm <C-o>
 " remove search highlighting when press esc
 nnoremap <esc> :noh<CR><esc>
 
-" surround word with single quotes
+" surround word with single quotes \q'
 nnoremap <leader>q' ciw''<esc>P
-" surround word with double quotes
+" surround word with double quotes \q"
 nnoremap <leader>q" ciw""<esc>P
-" remove quotes from word
+" remove quotes from word \qd
 nnoremap <leader>qd daW"=substitute(@@,"'\\\|\"","","g")<CR>P
 
 " ////////////////////////////////////////////////////////////////////////////
