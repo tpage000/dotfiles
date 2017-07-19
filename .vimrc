@@ -44,6 +44,7 @@ Plugin 'airblade/vim-gitgutter'          " Shows a git diff in the gutter
 Plugin 'kien/ctrlp.vim'                  " Fuzzy file, buffer, mru, tag, etc finder
 Plugin 'moll/vim-node'                   " Node stuff
 Plugin 'tpope/vim-rails'                 " Rails stuff
+Plugin 'exu/pgsql.vim'                   " Postgres highlighting
 
 " All plugins must be added before vundle#end
 call vundle#end()
@@ -69,6 +70,9 @@ autocmd FileType html,css EmmetInstall
 " Ctrl-P
 let g:ctrlp_working_path_mode = 'a'    " sets the working directory
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
+
+" use psql highlighting for all SQL files
+let g:sql_type_default = 'pgsql'
 
 "-----------------------------------------------------------------------------
 "                              KEYMAPS
@@ -127,6 +131,7 @@ set wildchar=<Tab>                " Expand the command line using tab
 set autoread                      " Reread file when changed from outside of Vim
 set foldcolumn=0                  " Add a bit of extra margin to the left
 set cursorline                    " Highlight current line
+set colorcolumn=80                " Adds a spritz on column 80
 set title                         " Show filename in window title bar
 set splitbelow                    " Open new split panes to right and bottom
 set splitright                    " Open new split panes to right and bottom
@@ -155,7 +160,7 @@ set nowrap                      " do not wrap lines
 set tabstop=2                   " Global tab width.
 set shiftwidth=2                " And again, related.
 set expandtab                   " Use spaces instead of tabs
-set textwidth=80                " wrap at 80 chars by default
+" set textwidth=80                " wrap at 80 chars by default
 
 " Character encoding
 scriptencoding utf-8
