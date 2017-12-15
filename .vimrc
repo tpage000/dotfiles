@@ -104,7 +104,7 @@ noremap <tab><tab> <C-w><C-w>
 " Delete range without moving cursor:
 com! -range D <line1>,<line2>d | norm <C-o>
 
-" remove search highlighting when press esc
+" remove search highlighting when press enter
 nnoremap <CR> :noh<CR><esc>
 
 " surround word with single quotes \q'
