@@ -88,6 +88,8 @@ noremap <leader>n :NERDTreeToggle<cr>
 noremap <leader>p :CtrlP<cr>           " to find files using ctrlp
 noremap <leader>b :CtrlPBuffer<cr>     " to find buffers using ctrlp
 
+" remove search highlighting when press \]
+nnoremap <leader>] :noh<CR><esc>
 " Navigation - go to line 144: 144 Enter
 nnoremap <CR> G
 
@@ -104,8 +106,6 @@ noremap <tab><tab> <C-w><C-w>
 " Delete range without moving cursor:
 com! -range D <line1>,<line2>d | norm <C-o>
 
-" remove search highlighting when press enter
-nnoremap <CR> :noh<CR><esc>
 
 " surround word with single quotes \q'
 nnoremap <leader>q' ciw''<esc>P
