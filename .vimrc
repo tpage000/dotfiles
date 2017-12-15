@@ -100,6 +100,10 @@ noremap <tab> <C-w>
 " TAB-TAB to cycle through windows
 noremap <tab><tab> <C-w><C-w>
 
+" Home key and End key scroll half-page up and half-page down
+nnoremap <Home> <C-u>
+nnoremap <End> <C-d>
+
 " --------------------
 " Other Useful Maps
 " --------------------
