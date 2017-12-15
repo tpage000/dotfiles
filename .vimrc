@@ -105,7 +105,7 @@ noremap <tab><tab> <C-w><C-w>
 com! -range D <line1>,<line2>d | norm <C-o>
 
 " remove search highlighting when press esc
-nnoremap <esc> :noh<CR><esc>
+nnoremap <CR> :noh<CR><esc>
 
 " surround word with single quotes \q'
 nnoremap <leader>q' ciw''<esc>P
@@ -113,6 +113,7 @@ nnoremap <leader>q' ciw''<esc>P
 nnoremap <leader>q" ciw""<esc>P
 " remove quotes from word \qd
 nnoremap <leader>qd daW"=substitute(@@,"'\\\|\"","","g")<CR>P
+
 
 " ----------------------------------------------------------------------------
 "                                        UI
@@ -131,7 +132,6 @@ set wildchar=<Tab>                " Expand the command line using tab
 set autoread                      " Reread file when changed from outside of Vim
 set foldcolumn=0                  " Add a bit of extra margin to the left
 set cursorline                    " Highlight current line
-set colorcolumn=80                " Adds a spritz on column 80
 set title                         " Show filename in window title bar
 set splitbelow                    " Open new split panes to right and bottom
 set splitright                    " Open new split panes to right and bottom
@@ -143,6 +143,16 @@ set smartcase                     " When searching be smart about cases
 set incsearch                     " Highlight matches as you type.
 set hlsearch                      " Highlight search results
 set list                          " Show hidden characters (tab and eol)
+
+"----------------------------------------------------------------------------
+" COLOR SCHEME
+"----------------------------------------------------------------------------
+colorscheme one 
+set t_Co=256
+set background=dark
+
+set colorcolumn=80                " Adds a spritz on column 80
+highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 " Make hidden characters look nicer (removes eol $)
 if &listchars ==# 'eol:$'
@@ -187,11 +197,4 @@ if ! has('gui_running')
     au InsertLeave * set timeoutlen=1000
     augroup END
 endif
-
-"----------------------------------------------------------------------------
-" COLOR SCHEME
-"----------------------------------------------------------------------------
-colorscheme one 
-set t_Co=256
-set background=dark
 
