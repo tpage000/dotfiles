@@ -88,8 +88,13 @@ noremap <leader>n :NERDTreeToggle<cr>
 noremap <leader>p :CtrlP<cr>           " to find files using ctrlp
 noremap <leader>b :CtrlPBuffer<cr>     " to find buffers using ctrlp
 
+" Cycle open buffers
+nnoremap <C-n> :bnext<CR>
+nnoremap <C-b> :bprevious<CR>
+
 " remove search highlighting when press \]
 nnoremap <leader>] :noh<CR><esc>
+
 " Navigation - go to line 144: 144 Enter
 nnoremap <CR> G
 
