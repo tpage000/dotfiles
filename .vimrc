@@ -125,8 +125,9 @@ com! -range D <line1>,<line2>d | norm <C-o>
 " Commentary: type \\ to toggle comments
 noremap <leader>\ :Commentary<cr>
 
-" remove search highlighting when press \h
-nnoremap <leader>h :noh<CR><esc>
+" ctrl+c to toggle highlight.
+let hlstate=0
+nnoremap <c-c> :if (hlstate%2 == 0) \| nohlsearch \| else \| set hlsearch \| endif \| let hlstate=hlstate+1<cr>
 
 " surround word with single quotes \q'
 nnoremap <leader>q' ciw''<esc>P
