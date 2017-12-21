@@ -1,13 +1,14 @@
-" --------------------------------------------------------------------------/
-" General
 " ---------------------------------------------------------------------------
-
-set nocompatible                  " Vim stuff, not Vi stuff.
-
-" --------------------------------------------------------------------------/
-" Plugin Manager
+"                                   GENERAL
 " ---------------------------------------------------------------------------
-filetype off                      " Needed for Vundle
+"                 *** find colorscheme at end of file ***
+
+set nocompatible   " Vim stuff, not Vi stuff.
+
+" ---------------------------------------------------------------------------
+"                                PLUGIN MANAGER
+" ---------------------------------------------------------------------------
+filetype off  " Needed for Vundle
 
 " Vundle Installation:
 let VundleExists=1
@@ -35,17 +36,17 @@ Plugin 'morhetz/gruvbox'
 Plugin 'rakr/vim-one'
 " Other
 Plugin 'scrooloose/nerdtree'               " Navigate the filesystem
-Plugin 'tpope/vim-commentary'              " Comment / uncomment lines and selections
+Plugin 'tpope/vim-commentary'              " Comment / uncomment lines
 Plugin 'bling/vim-airline'                 " Status bar
 Plugin 'octol/vim-cpp-enhanced-highlight'  " C++ highlighting
 Plugin 'pangloss/vim-javascript'           " Javascript highlighting
 Plugin 'chemzqm/vim-jsx-improve'           " JSX highlighting
+Plugin 'exu/pgsql.vim'                     " Postgres highlighting
 Plugin 'mattn/emmet-vim'                   " Boilerplate shortcuts
-Plugin 'airblade/vim-gitgutter'            " Shows a git diff in the gutter
-Plugin 'kien/ctrlp.vim'                    " Fuzzy file, buffer, mru, tag, etc finder
+Plugin 'airblade/vim-gitgutter'            " Shows a git diff in
+Plugin 'kien/ctrlp.vim'                    " Fuzzy file, buffer, etc finder
 Plugin 'moll/vim-node'                     " Node stuff
 Plugin 'tpope/vim-rails'                   " Rails stuff
-Plugin 'exu/pgsql.vim'                     " Postgres highlighting
 
 " All plugins must be added before vundle#end
 call vundle#end()
@@ -57,7 +58,7 @@ if VundleExists == 0
 endif
 
 "-----------------------------------------------------------------------------
-"                    Plugin Options
+"                                PLUGIN OPTIONS
 "-----------------------------------------------------------------------------
 " NERDTree
 let NERDTreeHighlightCursorline=1
@@ -81,15 +82,15 @@ let g:sql_type_default = 'pgsql'
 " netrw: open netrw with \]
 nnoremap <leader>] :Ex<CR>
 
-" Cycle open buffers
+" Cycle open buffers with Ctrl-n and Ctrl-b
 nnoremap <C-n> :bnext<CR>
 nnoremap <C-b> :bprevious<CR>
 
 " CtrlP: \p and \b 
-noremap <leader>p :CtrlP<cr>           " to find files using ctrlp
-noremap <leader>b :CtrlPBuffer<cr>     " to find buffers using ctrlp
+noremap <leader>p :CtrlP<cr>           "find files \p
+noremap <leader>b :CtrlPBuffer<cr>     "find buffers \b
 
-" NERDTree: open nerdtree with with \n
+" NERDTree: toggle nerdtree with with \n
 noremap <leader>n :NERDTreeToggle<cr>
 
 "-----------------------------------------------------------------------------
@@ -134,11 +135,9 @@ nnoremap <leader>q" ciw""<esc>P
 " remove quotes from word \qd
 nnoremap <leader>qd daW"=substitute(@@,"'\\\|\"","","g")<CR>P
 
-
 " ----------------------------------------------------------------------------
 "                                        UI
 " ----------------------------------------------------------------------------
-
 syntax enable                     " Turn on syntax highlighting
 filetype plugin indent on         " Turn on file type detection
 
@@ -163,17 +162,6 @@ set smartcase                     " When searching be smart about cases
 set incsearch                     " Highlight matches as you type.
 set hlsearch                      " Highlight search results
 set list                          " Show hidden characters (tab and eol)
-
-"----------------------------------------------------------------------------
-" COLOR SCHEME
-"----------------------------------------------------------------------------
-colorscheme one 
-set t_Co=256
-set background=dark
-
-" colorcolumn must be added after colorscheme set
-set colorcolumn=80                " Adds a spritz on column 80
-highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 " Make hidden characters look nicer (removes eol $)
 if &listchars ==# 'eol:$'
@@ -200,7 +188,6 @@ set encoding=utf8
 " ---------------------------------------------------------------------------
 " OTHER
 " ---------------------------------------------------------------------------
-
 "  Strip all trailing whitespace in file
 fun! <SID>StripTrailingWhitespaces()
     let l = line(".")
@@ -218,4 +205,14 @@ if ! has('gui_running')
     au InsertLeave * set timeoutlen=1000
     augroup END
 endif
+
+"----------------------------------------------------------------------------
+" COLOR SCHEME
+"----------------------------------------------------------------------------
+set background=dark  " set background before colorscheme to get full highlighting
+colorscheme one 
+
+" colorcolumn must be added after colorscheme set, otherwise it disappears
+set colorcolumn=80   " Adds line down column 80
+highlight ColorColumn ctermbg=0 guibg=lightgrey
 
