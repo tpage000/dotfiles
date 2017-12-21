@@ -34,17 +34,18 @@ Plugin 'sjl/badwolf'
 Plugin 'morhetz/gruvbox'
 Plugin 'rakr/vim-one'
 " Other
-Plugin 'scrooloose/nerdtree'             " Navigate the filesystem
-Plugin 'tpope/vim-commentary'            " Comment / uncomment lines and selections
-Plugin 'bling/vim-airline'               " Status bar
-Plugin 'pangloss/vim-javascript'         " Javascript highlighting
-Plugin 'chemzqm/vim-jsx-improve'         " JSX highlighting
-Plugin 'mattn/emmet-vim'                 " Boilerplate shortcuts
-Plugin 'airblade/vim-gitgutter'          " Shows a git diff in the gutter
-Plugin 'kien/ctrlp.vim'                  " Fuzzy file, buffer, mru, tag, etc finder
-Plugin 'moll/vim-node'                   " Node stuff
-Plugin 'tpope/vim-rails'                 " Rails stuff
-Plugin 'exu/pgsql.vim'                   " Postgres highlighting
+Plugin 'scrooloose/nerdtree'               " Navigate the filesystem
+Plugin 'tpope/vim-commentary'              " Comment / uncomment lines and selections
+Plugin 'bling/vim-airline'                 " Status bar
+Plugin 'octol/vim-cpp-enhanced-highlight'  " C++ highlighting
+Plugin 'pangloss/vim-javascript'           " Javascript highlighting
+Plugin 'chemzqm/vim-jsx-improve'           " JSX highlighting
+Plugin 'mattn/emmet-vim'                   " Boilerplate shortcuts
+Plugin 'airblade/vim-gitgutter'            " Shows a git diff in the gutter
+Plugin 'kien/ctrlp.vim'                    " Fuzzy file, buffer, mru, tag, etc finder
+Plugin 'moll/vim-node'                     " Node stuff
+Plugin 'tpope/vim-rails'                   " Rails stuff
+Plugin 'exu/pgsql.vim'                     " Postgres highlighting
 
 " All plugins must be added before vundle#end
 call vundle#end()
@@ -55,9 +56,9 @@ if VundleExists == 0
   :PluginInstall
 endif
 
-"----------------------------------------------------
+"-----------------------------------------------------------------------------
 "                    Plugin Options
-"----------------------------------------------------
+"-----------------------------------------------------------------------------
 " NERDTree
 let NERDTreeHighlightCursorline=1
 let NERDTreeIgnore = ['tmp', '.yardoc', 'pkg']
@@ -75,29 +76,35 @@ set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
 let g:sql_type_default = 'pgsql'
 
 "-----------------------------------------------------------------------------
-"                              KEYMAPS
+"                 FILE / BUFFER NAVIGATION KEYMAPS
 " ----------------------------------------------------------------------------
-
-" Commentary: type \\ to toggle comments
-noremap <leader>\ :Commentary<cr>
-
-" NERDTree: open nerdtree with with \n
-noremap <leader>n :NERDTreeToggle<cr>
-
-" CtrlP: \p and \b 
-noremap <leader>p :CtrlP<cr>           " to find files using ctrlp
-noremap <leader>b :CtrlPBuffer<cr>     " to find buffers using ctrlp
+" netrw: open netrw with \]
+nnoremap <leader>] :Ex<CR>
 
 " Cycle open buffers
 nnoremap <C-n> :bnext<CR>
 nnoremap <C-b> :bprevious<CR>
 
-" remove search highlighting when press \]
-nnoremap <leader>] :noh<CR><esc>
+" CtrlP: \p and \b 
+noremap <leader>p :CtrlP<cr>           " to find files using ctrlp
+noremap <leader>b :CtrlPBuffer<cr>     " to find buffers using ctrlp
 
+" NERDTree: open nerdtree with with \n
+noremap <leader>n :NERDTreeToggle<cr>
+
+"-----------------------------------------------------------------------------
+"                 LINE NAVIGATION KEYMAPS
+" ----------------------------------------------------------------------------
 " Navigation - go to line 144: 144 Enter
 nnoremap <CR> G
 
+" Home key and End key scroll half-page up and half-page down
+nnoremap <Home> <C-u>
+nnoremap <End> <C-d>
+
+"-----------------------------------------------------------------------------
+"                 WINDOW NAVIGATION KEYMAPS
+" ----------------------------------------------------------------------------
 " Window navigation - use TAB then any other window command ...
 " example: TAB h navigate to left window, TAB j navigate to lower window
 noremap <tab> <C-w>
@@ -105,16 +112,20 @@ noremap <tab> <C-w>
 " TAB-TAB to cycle through windows
 noremap <tab><tab> <C-w><C-w>
 
-" Home key and End key scroll half-page up and half-page down
-nnoremap <Home> <C-u>
-nnoremap <End> <C-d>
+"-----------------------------------------------------------------------------
+"                       OTHER USEFUL KEYMAPS 
+" ----------------------------------------------------------------------------
+" Compile and execute current file (C++)
+nnoremap <F8> :!clang++ % && ./a.out<CR>
 
-" --------------------
-" Other Useful Maps
-" --------------------
 " Delete range without moving cursor:
 com! -range D <line1>,<line2>d | norm <C-o>
 
+" Commentary: type \\ to toggle comments
+noremap <leader>\ :Commentary<cr>
+
+" remove search highlighting when press \h
+nnoremap <leader>h :noh<CR><esc>
 
 " surround word with single quotes \q'
 nnoremap <leader>q' ciw''<esc>P
@@ -160,6 +171,7 @@ colorscheme one
 set t_Co=256
 set background=dark
 
+" colorcolumn must be added after colorscheme set
 set colorcolumn=80                " Adds a spritz on column 80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
