@@ -34,7 +34,6 @@ Plugin 'gmarik/Vundle.vim'        " let Vundle manage Vundle, required
 Plugin 'sjl/badwolf'
 Plugin 'morhetz/gruvbox'
 Plugin 'rakr/vim-one'
-Plugin 'dracula/vim'
 " Other
 Plugin 'scrooloose/nerdtree'               " Navigate the filesystem
 Plugin 'tpope/vim-commentary'              " Comment / uncomment lines
@@ -131,9 +130,8 @@ com! -range D <line1>,<line2>d | norm <C-o>
 " Commentary: type \\ to toggle comments
 noremap <leader>\ :Commentary<cr>
 
-" ctrl+h to toggle highlight.
-let hlstate=0
-nnoremap <c-h> :if (hlstate%2 == 0) \| nohlsearch \| else \| set hlsearch \| endif \| let hlstate=hlstate+1<cr>
+" ctrl+h to turn off search highlighting
+nnoremap <c-h> :noh<CR>
 
 " surround word with single quotes \q'
 nnoremap <leader>q' ciw''<esc>P
