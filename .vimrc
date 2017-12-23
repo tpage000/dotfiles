@@ -117,6 +117,11 @@ noremap <tab><tab> <C-w><C-w>
 "-----------------------------------------------------------------------------
 "                       OTHER USEFUL KEYMAPS 
 " ----------------------------------------------------------------------------
+" Save with Ctrl-s 
+" Put stty -ixon in bash_profile to disable ctrl-s and ctrl-q override
+nnoremap <C-s> <Esc>:w<CR>
+inoremap <C-s> <Esc>:w<CR>
+
 " Compile and execute current file (C++)
 nnoremap <F8> :!clang++ % && ./a.out<CR>
 
@@ -212,9 +217,8 @@ endif
 " COLOR SCHEME
 "----------------------------------------------------------------------------
 set background=dark  " set background before colorscheme to get full highlighting
-colorscheme one 
+colorscheme gruvbox
 
 " colorcolumn must be added after colorscheme set, otherwise it disappears
 set colorcolumn=80   " Adds line down column 80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
-
