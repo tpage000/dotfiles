@@ -80,7 +80,7 @@ let g:sql_type_default = 'pgsql'
 "                 FILE / BUFFER NAVIGATION KEYMAPS
 " ----------------------------------------------------------------------------
 " netrw: open netrw with \]
-nnoremap <leader>] :Ex<CR>
+nnoremap <leader>] :Explore<CR>
 
 " Cycle open buffers with Ctrl-n and Ctrl-b
 nnoremap <C-n> :bnext<CR>
@@ -121,8 +121,8 @@ noremap <tab><tab> <C-w><C-w>
 nnoremap <C-s> <Esc>:w<CR>
 inoremap <C-s> <Esc>:w<CR>
 
-" Compile and execute current file (C++)
-nnoremap <F8> :!clang++ % && ./a.out<CR>
+" Compile and execute current file with g++ for C++11
+nnoremap <F8> :!g++ --std=c++11 % && ./a.out<CR>
 
 " Delete range without moving cursor:
 com! -range D <line1>,<line2>d | norm <C-o>
