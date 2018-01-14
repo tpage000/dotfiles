@@ -108,10 +108,10 @@ nnoremap <Right> zL
 " ----------------------------------------------------------------------------
 " Window navigation - use TAB then any other window command ...
 " example: TAB h navigate to left window, TAB j navigate to lower window
-noremap <tab> <C-w>
+" noremap <tab> <C-w>
 
 " TAB-TAB to cycle through windows
-noremap <tab><tab> <C-w><C-w>
+" noremap <tab><tab> <C-w><C-w>
 
 "-----------------------------------------------------------------------------
 "                       OTHER USEFUL KEYMAPS 
@@ -120,12 +120,21 @@ noremap <tab><tab> <C-w><C-w>
 
 " Enter Normal mode with backtick (press Esc for backtick character)
 " http://www.economyofeffort.com/media/images/sun-keyboard.png
-inoremap <Esc> `
-inoremap ` <Esc>
-vnoremap <Esc> `
-vnoremap ` <Esc>
+" inoremap <Esc> `
+" inoremap ` <Esc>
+" vnoremap <Esc> `
+" vnoremap ` <Esc>
 
-" Save with Ctrl-s 
+" Enter Normal mode with Tab
+" http://xahlee.info/kbd/i_old_keyboard_22509/terminal_ADM-3A_keyboard.jpg
+nnoremap <Tab> <Esc>
+vnoremap <Tab> <Esc>gV
+onoremap <Tab> <Esc>
+cnoremap <Tab> <C-C><Esc>
+inoremap <Tab> <Esc>`^
+inoremap <Esc> <Tab>
+
+" Save with Ctrl-s
 " Put stty -ixon in bash_profile to disable ctrl-s and ctrl-q override
 nnoremap <C-s> <Esc>:w<CR>
 inoremap <C-s> <Esc>:w<CR>
