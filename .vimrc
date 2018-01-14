@@ -3,8 +3,6 @@
 " ---------------------------------------------------------------------------
 "                 *** find colorscheme at end of file ***
 
-set nocompatible   " Vim stuff, not Vi stuff.
-
 " ---------------------------------------------------------------------------
 "                                PLUGIN MANAGER
 " ---------------------------------------------------------------------------
@@ -43,7 +41,7 @@ Plugin 'pangloss/vim-javascript'           " Javascript highlighting
 Plugin 'chemzqm/vim-jsx-improve'           " JSX highlighting
 Plugin 'exu/pgsql.vim'                     " Postgres highlighting
 Plugin 'mattn/emmet-vim'                   " Boilerplate shortcuts
-Plugin 'airblade/vim-gitgutter'            " Shows a git diff in
+Plugin 'airblade/vim-gitgutter'            " Shows a git diff in the gutter
 Plugin 'kien/ctrlp.vim'                    " Fuzzy file, buffer, etc finder
 Plugin 'moll/vim-node'                     " Node stuff
 Plugin 'tpope/vim-rails'                   " Rails stuff
@@ -99,10 +97,12 @@ noremap <leader>n :NERDTreeToggle<cr>
 " Navigation - go to line 144: 144 Enter
 nnoremap <CR> G
 
-" Home key and End key scroll half-page up and half-page down
-nnoremap <Home> <C-u>
-nnoremap <End> <C-d>
-
+" Normal mode arrow keys up and down  scroll half-page up and half-page down
+nnoremap <Up> <C-u>
+nnoremap <Down> <C-d>
+" Normal mode arrow keys left and right scroll half-page left and half-page right
+nnoremap <Left> zH
+nnoremap <Right> zL
 "-----------------------------------------------------------------------------
 "                 WINDOW NAVIGATION KEYMAPS
 " ----------------------------------------------------------------------------
@@ -116,6 +116,15 @@ noremap <tab><tab> <C-w><C-w>
 "-----------------------------------------------------------------------------
 "                       OTHER USEFUL KEYMAPS 
 " ----------------------------------------------------------------------------
+" Change Caps Lock to Ctrl
+
+" Enter Normal mode with backtick (press Esc for backtick character)
+" http://www.economyofeffort.com/media/images/sun-keyboard.png
+inoremap <Esc> `
+inoremap ` <Esc>
+vnoremap <Esc> `
+vnoremap ` <Esc>
+
 " Save with Ctrl-s 
 " Put stty -ixon in bash_profile to disable ctrl-s and ctrl-q override
 nnoremap <C-s> <Esc>:w<CR>
@@ -179,12 +188,10 @@ highlight SpecialKey guifg=#4a4a59
 
 " Text Formatting
 set autoindent                  " indent new lines
-set smartindent                 " be smart about automatic indentation
 set nowrap                      " do not wrap lines
 set tabstop=2                   " Global tab width.
-set shiftwidth=2                " And again, related.
 set expandtab                   " Use spaces instead of tabs
-" set textwidth=80                " wrap at 80 chars by default
+set shiftwidth=2                " And again, related.
 
 " Character encoding
 scriptencoding utf-8
@@ -215,7 +222,7 @@ endif
 " COLOR SCHEME
 "----------------------------------------------------------------------------
 set background=dark  " set background before colorscheme to get full highlighting
-colorscheme gruvbox
+colorscheme one
 
 " colorcolumn must be added after colorscheme set, otherwise it disappears
 set colorcolumn=80   " Adds line down column 80
