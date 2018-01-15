@@ -40,7 +40,8 @@ alias rm='rm -iv'
 alias mkdir='mkdir -pv'
 # find file
 alias qfind='find . -name '
-
+# nuke .DS_Store
+alias nukeDS='find . -type f -name "*.DS_Store" -ls -delete'
 # git aliases
 alias gs='git status'
 alias ga='git add'
