@@ -45,7 +45,7 @@ alias gc='git commit'
 alias ghk='git checkout '
 alias gb='git branch'
 # git diff last commit
-alias gdlc='git diff --cached HEAD^'
+alias gdl='git diff --cached HEAD^'
 # minimal git log
 alias gl='git log --graph --oneline'
 # minimal git log expanded with date and author
