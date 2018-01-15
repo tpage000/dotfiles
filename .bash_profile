@@ -45,7 +45,16 @@ alias qfind='find . -name '
 # nuke .DS_Store
 alias nukeDS='find . -type f -name "*.DS_Store" -ls -delete'
 
-# git aliases
+# Hide/show all desktop icons
+alias hide_desktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+alias show_desktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
+# Hide or show hidden files in Finder and on Desktop
+alias hide_files="defaults write com.apple.finder AppleShowAllFiles FALSE && killall Finder"
+alias show_files="defaults write com.apple.finder AppleShowAllFiles TRUE && killall Finder"
+
+# =============================================================================
+# GIT ALIASES
+# =============================================================================
 alias gs='git status'
 alias ga='git add'
 alias gc='git commit'
@@ -57,20 +66,13 @@ alias gdl='git diff --cached HEAD^'
 alias gl='git log --graph --oneline'
 # minimal git log expanded with date and author
 alias glx='git log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short --graph'
-# git shortcuts (bad practice, PROHIBITED, only for messing around)
+# git shortcuts for weekends
 alias gpull='git pull origin master'
 alias gpom='git push origin master'
 alias gall='git add -A && git commit -m'
 
-# Hide/show all desktop icons
-alias hide_desktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
-alias show_desktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
-# Hide or show hidden files in Finder and on Desktop
-alias hide_files="defaults write com.apple.finder AppleShowAllFiles FALSE && killall Finder"
-alias show_files="defaults write com.apple.finder AppleShowAllFiles TRUE && killall Finder"
-
 # =============================================================================
-# PATH
+# PATH, etc.
 # =============================================================================
 export RBENV_ROOT=/usr/local/var/rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
