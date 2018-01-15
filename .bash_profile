@@ -31,17 +31,20 @@ export HISTCONTROL=ignoreboth
 # =============================================================================
 alias reload="clear; source ~/.bash_profile"
 
-# Extend commands with more detail
+# Extend commands
 alias ls='ls -F'
 alias ll='ls -FGlAhp'
 alias cp='cp -iv'
 alias mv='mv -iv'
 alias rm='rm -iv'
 alias mkdir='mkdir -pv'
+
 # find file
 alias qfind='find . -name '
+
 # nuke .DS_Store
 alias nukeDS='find . -type f -name "*.DS_Store" -ls -delete'
+
 # git aliases
 alias gs='git status'
 alias ga='git add'
