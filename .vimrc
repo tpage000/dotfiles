@@ -236,3 +236,4 @@ colorscheme one
 " colorcolumn must be added after colorscheme set, otherwise it disappears
 set colorcolumn=80   " Adds line down column 80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
+
