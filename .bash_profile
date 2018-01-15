@@ -57,7 +57,7 @@ alias show_files="defaults write com.apple.finder AppleShowAllFiles TRUE && kill
 # =============================================================================
 alias gs='git status'
 alias ga='git add'
-alias gc='git commit'
+alias gco='git commit'
 alias ghk='git checkout '
 alias gb='git branch'
 # git diff last commit
@@ -69,6 +69,7 @@ alias glx='git log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\
 # git shortcuts for weekends
 alias gpull='git pull origin master'
 alias gpom='git push origin master'
+alias ga.='git add .'
 alias gall='git add -A && git commit -m'
 
 # =============================================================================
