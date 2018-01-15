@@ -33,6 +33,7 @@ alias reload="clear; source ~/.bash_profile"
 
 # Extend commands with more detail
 alias ls='ls -F'
+alias ll='ls -FGlAhp'
 alias cp='cp -iv'
 alias mv='mv -iv'
 alias rm='rm -iv'
