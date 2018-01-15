@@ -38,14 +38,22 @@ alias mv='mv -iv'
 alias rm='rm -iv'
 alias mkdir='mkdir -pv'
 
-# git shortcuts (fine to use these for status and pulling)
+# git aliases
 alias gs='git status'
-alias gpull='git pull origin master'
+alias ga='git add'
+alias gc='git commit'
+alias ghk='git checkout '
+alias gb='git branch'
+# git diff last commit
+alias gdlc='git diff --cached HEAD^'
+# minimal git log
+alias gl='git log --graph --oneline'
+# minimal git log expanded with date and author
+alias glx='git log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short --graph'
 # git shortcuts (bad practice, PROHIBITED, only for messing around)
+alias gpull='git pull origin master'
 alias gpom='git push origin master'
 alias gall='git add -A && git commit -m'
-# git shortcuts (For rapid throwaways, emergencies, dumpster fires)
-alias gupdates='git add -A && git status && git commit -m "updates" && git status'
 
 # Hide/show all desktop icons
 alias hide_desktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
