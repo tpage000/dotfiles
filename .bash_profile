@@ -38,6 +38,8 @@ alias cp='cp -iv'
 alias mv='mv -iv'
 alias rm='rm -iv'
 alias mkdir='mkdir -pv'
+# find file
+alias qfind='find . -name '
 
 # git aliases
 alias gs='git status'
