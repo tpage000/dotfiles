@@ -4,10 +4,10 @@
 
 ![](https://i.imgur.com/E2J5W0E.png)
 
-System configuration files that I share across computers (OSX).
+System configuration files I use across OSX machines.
 
 * Vim config
-* Bash profile (non-sensitive)
+* Bash profile
 
 Files are symlinked from the dotfiles directory to the root.
 
