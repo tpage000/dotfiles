@@ -113,7 +113,7 @@ nnoremap <F8> :!g++ --std=c++11 % && ./a.out<CR>
 " Delete range without moving cursor:
 com! -range D <line1>,<line2>d | norm <C-o>
 
-" Commentary: type \\ to toggle comments
+" Commentary - type \\ to toggle comments
 noremap <leader>\ :Commentary<cr>
 
 " ctrl+h to turn off search highlighting
@@ -178,47 +178,41 @@ filetype plugin indent on         " Turn on file type detection
 set ruler                         " Show cursor position
 set number                        " Show line numbers
 set noshowmode                    " use airline.vim status bar instead
-set backspace=indent,eol,start    " Intuitive backspacing.
-set wildmenu                      " Hitting TAB will show possible completions
-set wildchar=<Tab>                " Expand the command line using tab
-set autoread                      " Reread file when changed from outside of Vim
 set foldcolumn=0                  " Add a bit of extra margin to the left
 set cursorline                    " Highlight current line
 set title                         " Show filename in window title bar
-set splitbelow                    " Open new split panes to right and bottom
-set splitright                    " Open new split panes to right and bottom
 set showmatch                     " match brackets/braces
 set showcmd                       " display incomplete commands
 set laststatus=2                  " Show the status line all the time
-set visualbell                    " No beep
-set smartcase                     " When searching be smart about cases
 set incsearch                     " Highlight matches as you type.
 set hlsearch                      " Highlight search results
-set list                          " Show hidden characters (tab and eol)
+set list                          " Show hidden characters
+set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
 
-" Make hidden characters look nicer (removes eol $)
-if &listchars ==# 'eol:$'
-  set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
-endif
-
-"Invisible character colors
-highlight NonText guifg=#4a4a59
-highlight SpecialKey guifg=#4a4a59
+" Behavior
+set backspace=indent,eol,start    " Intuitive backspacing
+set wildmenu                      " Hitting TAB will show possible completions
+set wildchar=<Tab>                " Expand the command line using tab
+set autoread                      " Reread file when changed from outside of Vim
+set splitbelow                    " Open new split panes to right and bottom
+set splitright                    " Open new split panes to right and bottom
+set visualbell                    " No beep
+set smartcase                     " When searching be smart about cases
 
 " Text Formatting
-set autoindent                  " indent new lines
-set nowrap                      " do not wrap lines
-set tabstop=2                   " Global tab width.
-set expandtab                   " Use spaces instead of tabs
-set shiftwidth=2                " And again, related.
+set autoindent
+set nowrap
+set tabstop=2
+set expandtab
+set shiftwidth=2
 
 " Character encoding
 scriptencoding utf-8
 set encoding=utf8
 
-" ---------------------------------------------------------------------------
+" =============================================================================
 " OTHER
-" ---------------------------------------------------------------------------
+" =============================================================================
 " Strip all trailing whitespace in file
 fun! <SID>StripTrailingWhitespaces()
     let l = line(".")
@@ -237,13 +231,14 @@ if ! has('gui_running')
     augroup END
 endif
 
-"----------------------------------------------------------------------------
+" =============================================================================
 " COLOR SCHEME
-"----------------------------------------------------------------------------
-set background=dark  " set background before colorscheme to get full highlighting
+" =============================================================================
+" set background before colorscheme to get proper syntax highlighting
+set background=dark  
 colorscheme one
 
-" colorcolumn must be added after colorscheme set, otherwise it disappears
-set colorcolumn=80   " Adds line down column 80
+" colorcolumn must be added after colorscheme, otherwise column disappears
+set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
