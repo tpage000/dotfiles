@@ -32,7 +32,7 @@ export HISTCONTROL=ignoreboth
 alias reload="clear; source ~/.bash_profile"
 
 # Extend commands
-alias ls='ls -F'
+alias ls='ls -FG'
 alias ll='ls -FGlAhp'
 alias cp='cp -iv'
 alias mv='mv -iv'
