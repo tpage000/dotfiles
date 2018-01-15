@@ -1,12 +1,13 @@
-" ---------------------------------------------------------------------------
-"                                   GENERAL
-" ---------------------------------------------------------------------------
+" =============================================================================
+" VIMRC
+" =============================================================================
 "                 *** find colorscheme at end of file ***
 
-" ---------------------------------------------------------------------------
-"                                PLUGIN MANAGER
-" ---------------------------------------------------------------------------
-filetype off  " Needed for Vundle
+" =============================================================================
+" PLUGIN MANAGER
+" =============================================================================
+" Needed for Vundle
+filetype off  
 
 " Vundle Installation:
 let VundleExists=1
@@ -23,15 +24,17 @@ endif
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'gmarik/Vundle.vim'        " let Vundle manage Vundle, required
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'        
 
-" ---------------------------------------------------------------------------
-" Plugins
-" ---------------------------------------------------------------------------
+" =============================================================================
+" PLUGINS
+" =============================================================================
 " Themes
 Plugin 'sjl/badwolf'
 Plugin 'morhetz/gruvbox'
 Plugin 'rakr/vim-one'
+
 " Other
 Plugin 'scrooloose/nerdtree'               " Navigate the filesystem
 Plugin 'tpope/vim-commentary'              " Comment / uncomment lines
@@ -55,69 +58,33 @@ if VundleExists == 0
   :PluginInstall
 endif
 
-"-----------------------------------------------------------------------------
-"                                PLUGIN OPTIONS
-"-----------------------------------------------------------------------------
-" NERDTree
+" =============================================================================
+" PLUGIN OPTIONS
+" =============================================================================
+" NERDTree options
 let NERDTreeHighlightCursorline=1
 let NERDTreeIgnore = ['tmp', '.yardoc', 'pkg']
 let g:NERDTreeWinSize = 20
 
-" Emmet - enable just for html and css
+" Emmet options - enable just for html and css
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
 
-" Ctrl-P
-let g:ctrlp_working_path_mode = 'a'    " sets the working directory
+" Ctrl-P options
+let g:ctrlp_working_path_mode = 'a'
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
 
-" use psql highlighting for all SQL files
+" psql options -  use psql highlighting for all SQL files
 let g:sql_type_default = 'pgsql'
 
-"-----------------------------------------------------------------------------
-"                 FILE / BUFFER NAVIGATION KEYMAPS
-" ----------------------------------------------------------------------------
-" netrw: open netrw with \]
-nnoremap <leader>] :Explore<CR>
+" =============================================================================
+" KEYMAPS
+" =============================================================================
+" Always change Caps Lock to Ctrl, unless using HHKB
+" Ctrl used to be where Caps Lock is now on regular keyboard
+" http://xahlee.info/kbd/i_old_keyboard_22509/terminal_ADM-3A_keyboard.jpg
 
-" Cycle open buffers with Ctrl-n and Ctrl-b
-nnoremap <C-n> :bnext<CR>
-nnoremap <C-b> :bprevious<CR>
-
-" CtrlP: \p and \b 
-noremap <leader>p :CtrlP<cr>           "find files \p
-noremap <leader>b :CtrlPBuffer<cr>     "find buffers \b
-
-" NERDTree: toggle nerdtree with with \n
-noremap <leader>n :NERDTreeToggle<cr>
-
-"-----------------------------------------------------------------------------
-"                 LINE NAVIGATION KEYMAPS
-" ----------------------------------------------------------------------------
-" Navigation - go to line 144: 144 Enter
-nnoremap <CR> G
-
-" Normal mode arrow keys up and down  scroll half-page up and half-page down
-nnoremap <Up> <C-u>
-nnoremap <Down> <C-d>
-" Normal mode arrow keys left and right scroll half-page left and half-page right
-nnoremap <Left> zH
-nnoremap <Right> zL
-"-----------------------------------------------------------------------------
-"                 WINDOW NAVIGATION KEYMAPS
-" ----------------------------------------------------------------------------
-" Window navigation - use TAB then any other window command ...
-" example: TAB h navigate to left window, TAB j navigate to lower window
-" noremap <tab> <C-w>
-
-" TAB-TAB to cycle through windows
-" noremap <tab><tab> <C-w><C-w>
-
-"-----------------------------------------------------------------------------
-"                       OTHER USEFUL KEYMAPS 
-" ----------------------------------------------------------------------------
-" Change Caps Lock to Ctrl
-
+" Possible Esc key map:
 " Enter Normal mode with backtick (press Esc for backtick character)
 " http://www.economyofeffort.com/media/images/sun-keyboard.png
 " inoremap <Esc> `
@@ -125,8 +92,9 @@ nnoremap <Right> zL
 " vnoremap <Esc> `
 " vnoremap ` <Esc>
 
-" Enter Normal mode with Tab
+" Enter Normal mode with Tab -- Tab key is where old Esc key used to be
 " http://xahlee.info/kbd/i_old_keyboard_22509/terminal_ADM-3A_keyboard.jpg
+" Trade off is removing Ctrl-i jump list because Tab is linked to Ctrl-i
 nnoremap <Tab> <Esc>
 vnoremap <Tab> <Esc>gV
 onoremap <Tab> <Esc>
@@ -158,9 +126,51 @@ nnoremap <leader>q" ciw""<esc>P
 " remove quotes from word \qd
 nnoremap <leader>qd daW"=substitute(@@,"'\\\|\"","","g")<CR>P
 
-" ----------------------------------------------------------------------------
-"                                        UI
-" ----------------------------------------------------------------------------
+" -------------------------------------
+" FILE / BUFFER NAVIGATION KEYMAPS
+" -------------------------------------
+" netrw: open netrw file browser with \]
+nnoremap <leader>] :Explore<CR>
+
+" Cycle open buffers with Ctrl-n and Ctrl-b
+nnoremap <C-n> :bnext<CR>
+nnoremap <C-b> :bprevious<CR>
+
+" CtrlP: fuzzy buffers use \b instead of Ctrl-p Ctrl-b
+noremap <leader>b :CtrlPBuffer<cr>
+
+" NERDTree: toggle nerdtree with with \n
+noremap <leader>n :NERDTreeToggle<cr>
+
+" -------------------------------------
+" LINE NAVIGATION KEYMAPS
+" -------------------------------------
+" Navigation - go to line 144: 144 Enter
+nnoremap <CR> G
+
+" Normal mode arrow keys up and down scroll half-page up and half-page down
+nnoremap <Up> <C-u>
+nnoremap <Down> <C-d>
+
+" Normal mode arrow keys left and right scroll half-page left and half-page right
+nnoremap <Left> zH
+nnoremap <Right> zL
+
+" -------------------------------------
+" WINDOW NAVIGATION KEYMAPS
+" -------------------------------------
+" Possible window navigation keymaps if Tab is not used for Esc or jump list
+
+" Window navigation - use TAB then any other window command ...
+" example: TAB h navigate to left window, TAB j navigate to lower window
+" noremap <tab> <C-w>
+
+" TAB-TAB to cycle through windows
+" noremap <tab><tab> <C-w><C-w>
+
+" =============================================================================
+" UI
+" =============================================================================
 syntax enable                     " Turn on syntax highlighting
 filetype plugin indent on         " Turn on file type detection
 
