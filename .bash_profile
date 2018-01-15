@@ -38,13 +38,13 @@ alias mv='mv -iv'
 alias rm='rm -iv'
 alias mkdir='mkdir -pv'
 
-# git shortcuts (fine to use these)
+# git shortcuts (fine to use these for status and pulling)
 alias gs='git status'
 alias gpull='git pull origin master'
-# git shortcuts (bad practice, but useful sometimes)
+# git shortcuts (bad practice, PROHIBITED, only for messing around)
 alias gpom='git push origin master'
 alias gall='git add -A && git commit -m'
-# git shortcuts (horrible, for emergencies or throwaways)
+# git shortcuts (For rapid throwaways, emergencies, dumpster fires)
 alias gupdates='git add -A && git status && git commit -m "updates" && git status'
 
 # Hide/show all desktop icons
