@@ -77,6 +77,7 @@ alias gall='git add -A && git commit -m'
 # =============================================================================
 export RBENV_ROOT=/usr/local/var/rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 eval "$(rbenv init -)"
 
 eval "$(pyenv init -)"
