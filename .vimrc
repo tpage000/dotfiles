@@ -6,19 +6,8 @@
 " =============================================================================
 " PLUGIN MANAGER
 " =============================================================================
-" Needed for Vundle
+" required by Vundle plugin manager
 filetype off  
-
-" Vundle Installation:
-let VundleExists=1
-let vundle_readme=expand('~/.vim/bundle/Vundle.vim/README.md')
-if !filereadable(vundle_readme)
-  echo "Installing Vundle.."
-  echo ""
-  silent !mkdir -p ~/.vim/bundle
-  silent !git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-  let VundleExists=0
-endif
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -51,12 +40,6 @@ Plugin 'tpope/vim-rails'                   " Rails stuff
 
 " All plugins must be added before vundle#end
 call vundle#end()
-
-if VundleExists == 0
-  echo "Installing Bundles, please ignore key map error messages"
-  echo ""
-  :PluginInstall
-endif
 
 " =============================================================================
 " PLUGIN OPTIONS
