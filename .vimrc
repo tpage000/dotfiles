@@ -81,7 +81,7 @@ let g:sql_type_default = 'pgsql'
 " KEYMAPS
 " =============================================================================
 " Always change Caps Lock to Ctrl, unless using HHKB
-" Ctrl used to be where Caps Lock is now on regular keyboard
+" Caps Lock is where Ctrl was on ADM-3A keyboard
 " http://xahlee.info/kbd/i_old_keyboard_22509/terminal_ADM-3A_keyboard.jpg
 
 " Possible Esc key map:
@@ -92,13 +92,12 @@ let g:sql_type_default = 'pgsql'
 " vnoremap <Esc> `
 " vnoremap ` <Esc>
 
-" Enter Normal mode with Tab -- Tab key is where old Esc key used to be
+" Enter Normal mode with Tab -- Tab is where Esc was on ADM-3A keyboard
 " http://xahlee.info/kbd/i_old_keyboard_22509/terminal_ADM-3A_keyboard.jpg
 " Trade off is removing Ctrl-i jump list because Tab is linked to Ctrl-i
 nnoremap <Tab> <Esc>
 vnoremap <Tab> <Esc>gV
 onoremap <Tab> <Esc>
-cnoremap <Tab> <C-C><Esc>
 inoremap <Tab> <Esc>`^
 inoremap <Esc> <Tab>
 
