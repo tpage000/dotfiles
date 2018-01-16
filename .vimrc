@@ -131,12 +131,12 @@ noremap <leader>n :NERDTreeToggle<cr>
 nnoremap <CR> G
 
 " Normal mode arrow keys up and down scroll half-page up and half-page down
-" nnoremap <Up> <C-u>
-" nnoremap <Down> <C-d>
+nnoremap <Up> <C-u>
+nnoremap <Down> <C-d>
 
 " Normal mode arrow keys left and right scroll half-page left and half-page right
-" nnoremap <Left> zH
-" nnoremap <Right> zL
+nnoremap <Left> zH
+nnoremap <Right> zL
 
 " -------------------------------------
 " WINDOW NAVIGATION KEYMAPS
