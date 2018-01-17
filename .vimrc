@@ -1,4 +1,4 @@
-" =============================================================================
+
 " VIMRC
 " =============================================================================
 "                 *** find colorscheme at end of file ***
@@ -63,7 +63,7 @@ let g:sql_type_default = 'pgsql'
 " =============================================================================
 " KEYMAPS
 " =============================================================================
-" Always change Caps Lock to Ctrl, unless using HHKB
+" Change Caps Lock to Ctrl (not necessary if using HHKB)
 " Caps Lock is where Ctrl was on ADM-3A keyboard
 " http://xahlee.info/kbd/i_old_keyboard_22509/terminal_ADM-3A_keyboard.jpg
 
@@ -75,14 +75,18 @@ let g:sql_type_default = 'pgsql'
 " vnoremap <Esc> `
 " vnoremap ` <Esc>
 
+" Possible Esc key map:
 " Enter Normal mode with Tab -- Tab is where Esc was on ADM-3A keyboard
 " http://xahlee.info/kbd/i_old_keyboard_22509/terminal_ADM-3A_keyboard.jpg
 " Trade off is removing Ctrl-i jump list because Tab is linked to Ctrl-i
-nnoremap <Tab> <Esc>
-vnoremap <Tab> <Esc>gV
-onoremap <Tab> <Esc>
-inoremap <Tab> <Esc>`^
-inoremap <Esc> <Tab>
+" nnoremap <Tab> <Esc>
+" vnoremap <Tab> <Esc>gV
+" onoremap <Tab> <Esc>
+" inoremap <Tab> <Esc>`^
+" inoremap <Esc> <Tab>
+
+" Stops awkward off-by-one repositioning of cursor when leaving Insert
+inoremap <Esc> <Esc>`^
 
 " Save with Ctrl-s
 " Put stty -ixon in bash_profile to disable ctrl-s and ctrl-q override
@@ -187,6 +191,9 @@ set nowrap
 set tabstop=2
 set expandtab
 set shiftwidth=2
+
+" Set tab to 4 spaces for Python
+autocmd BufRead,BufNewFile *.py set tabstop=4 shiftwidth=4 softtabstop=4
 
 " Character encoding
 scriptencoding utf-8
