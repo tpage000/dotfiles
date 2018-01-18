@@ -62,6 +62,9 @@ alias ghk='git checkout '
 alias gb='git branch'
 # git diff last commit
 alias gdl='git diff --cached HEAD^'
+# stashing
+alias gstl='git stash list'
+alias gsta='git stash apply'
 # minimal git log
 alias gl='git log --graph --oneline'
 # minimal git log expanded with date and author
