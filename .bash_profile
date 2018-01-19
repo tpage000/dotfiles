@@ -52,6 +52,9 @@ alias show_desktop="defaults write com.apple.finder CreateDesktop -bool true && 
 alias hide_files="defaults write com.apple.finder AppleShowAllFiles FALSE && killall Finder"
 alias show_files="defaults write com.apple.finder AppleShowAllFiles TRUE && killall Finder"
 
+alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
+alias pgstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
+
 # =============================================================================
 # GIT ALIASES
 # =============================================================================
