@@ -102,8 +102,9 @@ com! -range D <line1>,<line2>d | norm <C-o>
 " Commentary - type \\ to toggle comments
 noremap <leader>\ :Commentary<cr>
 
-" ctrl+h to turn off search highlighting
-nnoremap <c-h> :noh<CR>
+" ctrl+l to mute search highlighting (and redraw screen)
+" From Practical Vim 2 ed.
+nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 
 " surround word with single quotes \q'
 nnoremap <leader>q' ciw''<esc>P
