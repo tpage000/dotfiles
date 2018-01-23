@@ -113,6 +113,10 @@ nnoremap <leader>q" ciw""<esc>P
 " remove quotes from word \qd
 nnoremap <leader>qd daW"=substitute(@@,"'\\\|\"","","g")<CR>P
 
+" cutting and pasting -- toggle numbers and paste mode
+nnoremap <leader>n :set number!<CR>
+nnoremap <leader>p :set paste!<CR>
+
 " -------------------------------------
 " FILE / BUFFER NAVIGATION KEYMAPS
 " -------------------------------------
@@ -126,8 +130,8 @@ nnoremap <C-b> :bprevious<CR>
 " CtrlP: fuzzy buffers use \b instead of Ctrl-p Ctrl-b
 noremap <leader>b :CtrlPBuffer<cr>
 
-" NERDTree: toggle nerdtree with with \n
-noremap <leader>n :NERDTreeToggle<cr>
+" NERDTree: toggle nerdtree with with \t
+noremap <leader>t :NERDTreeToggle<cr>
 
 " -------------------------------------
 " LINE NAVIGATION KEYMAPS
