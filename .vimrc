@@ -127,6 +127,9 @@ nnoremap <leader>] :Explore<CR>
 nnoremap <C-n> :bnext<CR>
 nnoremap <C-b> :bprevious<CR>
 
+" Delete current buffer
+nnoremap <leader>d :bdelete<CR>
+
 " CtrlP: fuzzy buffers use \b instead of Ctrl-p Ctrl-b
 noremap <leader>b :CtrlPBuffer<cr>
 
