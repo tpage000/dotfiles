@@ -58,11 +58,13 @@ alias pgstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 # =============================================================================
 # GIT ALIASES
 # =============================================================================
-alias gs='git status'
+alias g='git status'
 alias ga='git add'
 alias gco='git commit'
 alias ghk='git checkout '
 alias gb='git branch'
+# add hunks
+alias gap='git add -p'
 # git diff last commit
 alias gdl='git diff --cached HEAD^'
 # stashing
@@ -72,6 +74,8 @@ alias gsta='git stash apply'
 alias gl='git log --graph --oneline'
 # minimal git log expanded with date and author
 alias glx='git log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short --graph'
+# fetching from origin
+alias gf='git fetch origin'
 # git shortcuts for weekends
 alias gpull='git pull origin master'
 alias gpom='git push origin master'
