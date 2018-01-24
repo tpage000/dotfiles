@@ -25,18 +25,18 @@ Plugin 'morhetz/gruvbox'
 Plugin 'rakr/vim-one'
 
 " Other
-Plugin 'scrooloose/nerdtree'               " Navigate the filesystem
-Plugin 'tpope/vim-commentary'              " Comment / uncomment lines
-Plugin 'bling/vim-airline'                 " Status bar
-Plugin 'octol/vim-cpp-enhanced-highlight'  " C++ highlighting
-Plugin 'pangloss/vim-javascript'           " Javascript highlighting
-Plugin 'chemzqm/vim-jsx-improve'           " JSX highlighting
-Plugin 'exu/pgsql.vim'                     " Postgres highlighting
-Plugin 'mattn/emmet-vim'                   " Boilerplate shortcuts
-Plugin 'airblade/vim-gitgutter'            " Shows a git diff in the gutter
-Plugin 'kien/ctrlp.vim'                    " Fuzzy file, buffer, etc finder
-Plugin 'moll/vim-node'                     " Node stuff
-Plugin 'tpope/vim-rails'                   " Rails stuff
+Plugin 'scrooloose/nerdtree'              " Navigate the filesystem
+Plugin 'tpope/vim-commentary'             " Comment / uncomment lines
+Plugin 'bling/vim-airline'                " Status bar
+Plugin 'octol/vim-cpp-enhanced-highlight' " C++ highlighting
+Plugin 'pangloss/vim-javascript'          " Javascript highlighting
+Plugin 'chemzqm/vim-jsx-improve'          " JSX highlighting
+Plugin 'exu/pgsql.vim'                    " Postgres highlighting
+Plugin 'mattn/emmet-vim'                  " Boilerplate shortcuts
+Plugin 'airblade/vim-gitgutter'           " Shows a git diff in the sign column
+Plugin 'kien/ctrlp.vim'                   " Fuzzy file, buffer, etc finder
+Plugin 'moll/vim-node'                    " Node stuff
+Plugin 'tpope/vim-rails'                  " Rails stuff
 
 " All plugins must be added before vundle#end
 call vundle#end()
