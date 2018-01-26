@@ -42,6 +42,9 @@ alias mkdir='mkdir -pv'
 # find file
 alias qfind='find . -name '
 
+# display $PATH in lines
+alias paths='echo $PATH | tr ":" "\n"'
+
 # nuke .DS_Store
 alias nukeDS='find . -type f -name "*.DS_Store" -ls -delete'
 
