@@ -37,6 +37,7 @@ Plugin 'airblade/vim-gitgutter'           " Shows a git diff in the sign column
 Plugin 'kien/ctrlp.vim'                   " Fuzzy file, buffer, etc finder
 Plugin 'moll/vim-node'                    " Node stuff
 Plugin 'tpope/vim-rails'                  " Rails stuff
+Plugin 'jiangmiao/auto-pairs'             " Autocomplete matching braces, etc.
 
 " All plugins must be added before vundle#end
 call vundle#end()
