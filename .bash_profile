@@ -46,7 +46,7 @@ alias qfind='find . -name '
 alias paths='echo $PATH | tr ":" "\n"'
 
 # display disk usage for frequently backed-up directories
-alias backupsize='du -hsc ~/Downloads ~/Pictures ~/Documents ~/Dev'
+alias backupsize='du -hsc ~/Downloads ~/Pictures ~/Documents ~/Music ~/Dev'
 
 # nuke .DS_Store
 alias nukeDS='find . -type f -name "*.DS_Store" -ls -delete'
