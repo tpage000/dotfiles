@@ -94,8 +94,11 @@ inoremap <Esc> <Esc>`^
 nnoremap <C-s> <Esc>:w<CR>
 inoremap <C-s> <Esc>:w<CR>
 
-" C++ compile and execute current file with g++ for C++11
+" C++ compile current file with g++ for C++11, and execute
 nnoremap <F10> :!g++ --std=c++11 % && ./a.out<CR>
+
+" Haskell compile project with cabal build, and execute
+nnoremap <F9> :!cabal build && src/Main<CR>
 
 " Delete range without moving cursor:
 com! -range D <line1>,<line2>d | norm <C-o>
