@@ -94,7 +94,7 @@ inoremap <Esc> <Esc>`^
 nnoremap <C-s> <Esc>:w<CR>
 inoremap <C-s> <Esc>:w<CR>
 
-" Compile and execute current file with g++ for C++11
+" C++ compile and execute current file with g++ for C++11
 nnoremap <F10> :!g++ --std=c++11 % && ./a.out<CR>
 
 " Delete range without moving cursor:
