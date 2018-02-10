@@ -32,6 +32,7 @@ Plugin 'octol/vim-cpp-enhanced-highlight' " C++ highlighting
 Plugin 'pangloss/vim-javascript'          " Javascript highlighting
 Plugin 'chemzqm/vim-jsx-improve'          " JSX highlighting
 Plugin 'exu/pgsql.vim'                    " Postgres highlighting
+Plugin 'travitch/hasksyn'                 " Haskell highlighting
 Plugin 'mattn/emmet-vim'                  " Boilerplate shortcuts
 Plugin 'airblade/vim-gitgutter'           " Shows a git diff in the sign column
 Plugin 'kien/ctrlp.vim'                   " Fuzzy file, buffer, etc finder
