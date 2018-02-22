@@ -49,7 +49,8 @@ call vundle#end()
 " NERDTree options
 let NERDTreeHighlightCursorline=1
 let NERDTreeIgnore = ['tmp', '.yardoc', 'pkg']
-let g:NERDTreeWinSize = 20
+let g:NERDTreeWinSize = 35
+let NERDTreeShowHidden=1
 
 " Emmet options - enable just for html and css
 let g:user_emmet_install_global = 0
