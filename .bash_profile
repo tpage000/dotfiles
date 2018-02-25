@@ -82,6 +82,8 @@ alias gl='git log --graph --oneline'
 alias glx='git log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short --graph'
 # fetching from origin
 alias gf='git fetch origin'
+# pushing to origin <some branch>
+alias gpo='git push origin'
 # git shortcuts for weekends
 alias gpull='git pull origin master'
 alias gpom='git push origin master'
