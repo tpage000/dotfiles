@@ -126,8 +126,10 @@ nnoremap <leader>p :set paste!<CR>
 " -------------------------------------
 " FILE / BUFFER NAVIGATION KEYMAPS
 " -------------------------------------
-" netrw: open netrw file browser with \]
-nnoremap <leader>] :Explore<CR>
+
+" netrw toggling
+nnoremap <Space> :Explore<CR>
+nnoremap <leader><Space> <C-^>
 
 " Cycle open buffers with Ctrl-n and Ctrl-b
 nnoremap <C-n> :bnext<CR>
