@@ -244,6 +244,6 @@ set background=dark
 colorscheme one
 
 " colorcolumn must be added after colorscheme, otherwise column disappears
-set colorcolumn=80
+set colorcolumn=90
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
