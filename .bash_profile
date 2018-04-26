@@ -61,6 +61,7 @@ alias show_files="defaults write com.apple.finder AppleShowAllFiles TRUE && kill
 alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias pgstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 
+alias server='python -m SimpleHTTPServer'
 # =============================================================================
 # GIT ALIASES
 # =============================================================================
