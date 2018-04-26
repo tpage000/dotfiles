@@ -42,6 +42,9 @@ alias mkdir='mkdir -pv'
 # find file
 alias qfind='find . -name '
 
+# file count
+alias filecount='find . -print | wc -l'
+
 # display $PATH in lines
 alias paths='echo $PATH | tr ":" "\n"'
 
@@ -62,6 +65,7 @@ alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/serv
 alias pgstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 
 alias server='python -m SimpleHTTPServer'
+alias phpserver='php -S localhost:8000 system/router.php'
 # =============================================================================
 # GIT ALIASES
 # =============================================================================
