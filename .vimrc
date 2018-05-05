@@ -241,7 +241,7 @@ endif
 " =============================================================================
 " set background before colorscheme to get proper syntax highlighting
 set background=dark  
-colorscheme one
+colorscheme badwolf
 
 " colorcolumn must be added after colorscheme, otherwise column disappears
 set colorcolumn=80
