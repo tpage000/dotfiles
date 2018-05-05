@@ -210,6 +210,8 @@ set shiftwidth=2
 
 " Set tab to 4 spaces for Python
 autocmd BufRead,BufNewFile *.py set tabstop=4 shiftwidth=4 softtabstop=4
+" Use Javascript syntax highlighting for Typescript files
+au BufEnter,BufRead *.ts set filetype=javascript
 
 " Character encoding
 scriptencoding utf-8
@@ -244,6 +246,6 @@ set background=dark
 colorscheme badwolf
 
 " colorcolumn must be added after colorscheme, otherwise column disappears
-set colorcolumn=80
+set colorcolumn=90
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
