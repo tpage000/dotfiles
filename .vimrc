@@ -1,4 +1,4 @@
-
+" =============================================================================
 " VIMRC
 " =============================================================================
 "                 *** find colorscheme at end of file ***
@@ -67,28 +67,6 @@ let g:sql_type_default = 'pgsql'
 " =============================================================================
 " KEYMAPS
 " =============================================================================
-" Change Caps Lock to Ctrl (not necessary if using HHKB)
-" Caps Lock is where Ctrl was on ADM-3A keyboard
-" http://xahlee.info/kbd/i_old_keyboard_22509/terminal_ADM-3A_keyboard.jpg
-
-" Possible Esc key map:
-" Enter Normal mode with backtick (press Esc for backtick character)
-" http://www.economyofeffort.com/media/images/sun-keyboard.png
-" inoremap <Esc> `
-" inoremap ` <Esc>
-" vnoremap <Esc> `
-" vnoremap ` <Esc>
-
-" Possible Esc key map:
-" Enter Normal mode with Tab -- Tab is where Esc was on ADM-3A keyboard
-" http://xahlee.info/kbd/i_old_keyboard_22509/terminal_ADM-3A_keyboard.jpg
-" Trade off is removing Ctrl-i jump list because Tab is linked to Ctrl-i
-" nnoremap <Tab> <Esc>
-" vnoremap <Tab> <Esc>gV
-" onoremap <Tab> <Esc>
-" inoremap <Tab> <Esc>`^
-" inoremap <Esc> <Tab>
-
 " Stops awkward off-by-one repositioning of cursor when leaving Insert
 inoremap <Esc> <Esc>`^
 
@@ -97,28 +75,12 @@ inoremap <Esc> <Esc>`^
 nnoremap <C-s> <Esc>:w<CR>
 inoremap <C-s> <Esc>:w<CR>
 
-" C++ compile current file with GNU for C++11, and execute
-nnoremap <F10> :!g++ --std=c++11 % && ./a.out<CR>
-
-" Haskell compile current file with GHC, and execute
-nnoremap <F9> :!ghc % && src/Main<CR>
-
-" Delete range without moving cursor:
-com! -range D <line1>,<line2>d | norm <C-o>
-
 " Commentary - type \\ to toggle comments
 noremap <leader>\ :Commentary<cr>
 
 " ctrl+l to mute search highlighting (and redraw screen)
 " From Practical Vim 2 ed.
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
-
-" surround word with single quotes \q'
-nnoremap <leader>q' ciw''<esc>P
-" surround word with double quotes \q"
-nnoremap <leader>q" ciw""<esc>P
-" remove quotes from word \qd
-nnoremap <leader>qd daW"=substitute(@@,"'\\\|\"","","g")<CR>P
 
 " cutting and pasting -- toggle numbers and paste mode
 nnoremap <leader>n :set number!<CR>
@@ -127,7 +89,6 @@ nnoremap <leader>p :set paste!<CR>
 " -------------------------------------
 " FILE / BUFFER NAVIGATION KEYMAPS
 " -------------------------------------
-
 " netrw toggling
 nnoremap <Space> :Explore<CR>
 nnoremap <leader><Space> <C-^>
@@ -138,9 +99,6 @@ nnoremap <C-b> :bprevious<CR>
 
 " Delete current buffer
 nnoremap <leader>d :bdelete<CR>
-
-" CtrlP: fuzzy buffers use \b instead of Ctrl-p Ctrl-b
-noremap <leader>b :CtrlPBuffer<cr>
 
 " NERDTree: toggle nerdtree with with \t
 noremap <leader>t :NERDTreeToggle<cr>
@@ -160,16 +118,31 @@ nnoremap <Left> zH
 nnoremap <Right> zL
 
 " -------------------------------------
-" WINDOW NAVIGATION KEYMAPS
+" QUICK COMPILES
 " -------------------------------------
-" Possible window navigation keymaps if Tab is not used for Esc or jump list
+" C++ compile current file with GNU for C++11, and execute
+nnoremap <F10> :!g++ --std=c++11 % && ./a.out<CR>
 
-" Window navigation - use TAB then any other window command ...
-" example: TAB h navigate to left window, TAB j navigate to lower window
-" noremap <tab> <C-w>
+" Haskell compile current file with GHC, and execute
+nnoremap <F9> :!ghc % && src/Main<CR>
 
-" TAB-TAB to cycle through windows
-" noremap <tab><tab> <C-w><C-w>
+" ------------------------------------
+"  NEVER USED
+" ------------------------------------
+" Delete range without moving cursor:
+com! -range D <line1>,<line2>d | norm <C-o>
+
+" CtrlP: fuzzy buffers use \b instead of Ctrl-p Ctrl-b
+noremap <leader>b :CtrlPBuffer<cr>
+
+" surround word with single quotes \q'
+nnoremap <leader>q' ciw''<esc>P
+
+" surround word with double quotes \q"
+nnoremap <leader>q" ciw""<esc>P
+
+" remove quotes from word \qd
+nnoremap <leader>qd daW"=substitute(@@,"'\\\|\"","","g")<CR>P
 
 " =============================================================================
 " UI
@@ -244,7 +217,7 @@ endif
 " =============================================================================
 " set background before colorscheme to get proper syntax highlighting
 set background=dark  
-colorscheme badwolf
+colorscheme one
 
 " colorcolumn must be added after colorscheme, otherwise column disappears
 set colorcolumn=90
