@@ -67,6 +67,8 @@ let g:sql_type_default = 'pgsql'
 " =============================================================================
 " KEYMAPS
 " =============================================================================
+let mapleader = "\<Space>"
+
 " Stops awkward off-by-one repositioning of cursor when leaving Insert
 inoremap <Esc> <Esc>`^
 
@@ -75,8 +77,12 @@ inoremap <Esc> <Esc>`^
 nnoremap <C-s> <Esc>:w<CR>
 inoremap <C-s> <Esc>:w<CR>
 
-" Commentary - type \\ to toggle comments
-noremap <leader>\ :Commentary<cr>
+" Commentary
+noremap <leader><leader> :Commentary<cr>
+
+" Add newline above or below without staying in insert mode
+nnoremap <leader>m O<Esc>j^
+nnoremap <leader>, o<Esc>k^
 
 " ctrl+l to mute search highlighting (and redraw screen)
 " From Practical Vim 2 ed.
@@ -90,8 +96,8 @@ nnoremap <leader>p :set paste!<CR>
 " FILE / BUFFER NAVIGATION KEYMAPS
 " -------------------------------------
 " netrw toggling
-nnoremap <Space> :Explore<CR>
-nnoremap <leader><Space> <C-^>
+nnoremap <leader>e :Explore<CR>
+" nnoremap <leader><Space> <C-^>
 
 " Cycle open buffers with Ctrl-n and Ctrl-b
 nnoremap <C-n> :bnext<CR>
@@ -100,7 +106,7 @@ nnoremap <C-b> :bprevious<CR>
 " Delete current buffer
 nnoremap <leader>d :bdelete<CR>
 
-" NERDTree: toggle nerdtree with with \t
+" NERDTree: toggle nerdtree
 noremap <leader>t :NERDTreeToggle<cr>
 
 " -------------------------------------
@@ -109,9 +115,9 @@ noremap <leader>t :NERDTreeToggle<cr>
 " Navigation - go to line 144: 144 Enter
 nnoremap <CR> G
 
-" Normal mode arrow keys up and down scroll half-page up and half-page down
-nnoremap <Up> <C-u>
-nnoremap <Down> <C-d>
+" Normal mode arrow keys up and down scroll line by line
+nnoremap <Up> <C-y>
+nnoremap <Down> <C-e>
 
 " Normal mode arrow keys left and right scroll half-page left and half-page right
 nnoremap <Left> zH
