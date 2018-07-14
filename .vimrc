@@ -58,8 +58,8 @@ let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
 
 " Ctrl-P options
-let g:ctrlp_working_path_mode = 'a'
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/*
+let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_custom_ignore = { 'dir': '.git$|build$\|node_modules$' }
 
 " psql options -  use psql highlighting for all SQL files
 let g:sql_type_default = 'pgsql'

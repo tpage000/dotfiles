@@ -72,15 +72,12 @@ alias phpserver='php -S localhost:8000 system/router.php'
 alias g='git status'
 alias ga='git add'
 alias gco='git commit'
-alias ghk='git checkout '
+alias gchk='git checkout '
 alias gb='git branch'
-# add hunks
-alias gap='git add -p'
+# git diff working tree
+alias gd='git diff'
 # git diff last commit
-alias gdl='git diff --cached HEAD^'
-# stashing
-alias gstl='git stash list'
-alias gsta='git stash apply'
+alias gdl='git diff @^'
 # minimal git log
 alias gl='git log --graph --oneline'
 # minimal git log expanded with date and author
@@ -94,6 +91,11 @@ alias gpull='git pull origin master'
 alias gpom='git push origin master'
 alias ga.='git add .'
 alias gall='git add -A && git commit -m'
+# add hunks
+alias gap='git add -p'
+# stashing
+alias gstl='git stash list'
+alias gsta='git stash apply'
 
 # =============================================================================
 # PATH, etc.
