@@ -81,8 +81,8 @@ inoremap <C-s> <Esc>:w<CR>
 noremap <leader><leader> :Commentary<cr>
 
 " Add newline above or below without staying in insert mode
-nnoremap <leader>m O<Esc>j^
-nnoremap <leader>, o<Esc>k^
+nnoremap - O<Esc>j
+nnoremap + o<Esc>k 
 
 " ctrl+l to mute search highlighting (and redraw screen)
 " From Practical Vim 2 ed.
@@ -109,6 +109,9 @@ nnoremap <leader>d :bdelete<CR>
 " NERDTree: toggle nerdtree
 noremap <leader>t :NERDTreeToggle<cr>
 
+" Alternative buffer
+noremap \ <C-^>
+ 
 " -------------------------------------
 " LINE NAVIGATION KEYMAPS
 " -------------------------------------
@@ -122,6 +125,22 @@ nnoremap <Down> <C-e>
 " Normal mode arrow keys left and right scroll half-page left and half-page right
 nnoremap <Left> zH
 nnoremap <Right> zL
+
+" -------------------------------------
+" WINDOW RESIZING KEYMAPS
+" -------------------------------------
+" Vertical window resizing
+nnoremap <S-Right> <C-w>>
+nnoremap <S-Left> <C-w><
+nnoremap <leader><Right> :vertical resize 94<cr>
+nnoremap <leader><Left> :vertical resize 46<cr>
+
+" Horizontal window resizing
+nnoremap <leader><Up> :resize 30<cr>
+nnoremap <leader><Down> :resize 10<cr>
+
+" Open vertical split, resize original window, open split window on netrw
+nnoremap <F8> :vsp<cr><C-w><C-w>:vertical resize 96<cr><C-w><C-w>:Ex<cr>
 
 " -------------------------------------
 " QUICK COMPILES
