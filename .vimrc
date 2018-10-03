@@ -27,6 +27,7 @@ Plugin 'rakr/vim-one'
 " Other
 Plugin 'scrooloose/nerdtree'              " Navigate the filesystem
 Plugin 'tpope/vim-commentary'             " Comment / uncomment lines
+Plugin 'tpope/vim-surround'
 Plugin 'bling/vim-airline'                " Status bar
 Plugin 'octol/vim-cpp-enhanced-highlight' " C++ highlighting
 Plugin 'pangloss/vim-javascript'          " Javascript highlighting
