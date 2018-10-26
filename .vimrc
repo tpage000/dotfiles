@@ -41,6 +41,7 @@ Plugin 'kien/ctrlp.vim'                   " Fuzzy file, buffer, etc finder
 Plugin 'moll/vim-node'                    " Node stuff
 Plugin 'tpope/vim-rails'                  " Rails stuff
 Plugin 'jiangmiao/auto-pairs'             " Autocomplete matching braces, etc.
+Plugin 'mustache/vim-mustache-handlebars'
 
 " All plugins must be added before vundle#end
 call vundle#end()
@@ -81,7 +82,7 @@ inoremap <C-s> <Esc>:w<CR>
 " Commentary
 noremap <leader><leader> :Commentary<cr>
 
-" Add newline above or below without staying in insert mode
+" Add newline above or below without leaving normal mode
 nnoremap - O<Esc>j
 nnoremap + o<Esc>k 
 
