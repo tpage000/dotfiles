@@ -36,7 +36,7 @@ Plugin 'chemzqm/vim-jsx-improve'          " JSX highlighting
 Plugin 'exu/pgsql.vim'                    " Postgres highlighting
 Plugin 'travitch/hasksyn'                 " Haskell highlighting
 Plugin 'mattn/emmet-vim'                  " Boilerplate shortcuts
-Plugin 'airblade/vim-gitgutter'           " Shows a git diff in the sign column
+" Plugin 'airblade/vim-gitgutter'           " Shows a git diff in the sign column
 Plugin 'kien/ctrlp.vim'                   " Fuzzy file, buffer, etc finder
 Plugin 'moll/vim-node'                    " Node stuff
 Plugin 'tpope/vim-rails'                  " Rails stuff
