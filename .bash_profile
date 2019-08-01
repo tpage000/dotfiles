@@ -15,7 +15,7 @@ get_git_branch() {
 }
 
 # Prompt - username, directory basename, git branch if exists, newline
-export PS1="\e[0;37m\u \e[0;32m\W\e[0m\$(get_git_branch) \n$ "
+export PS1="\e[0;37m\u \e[0;32m\w\e[0m\$(get_git_branch) \n$ "
 
 # Let other programs use ctrl-s and ctrl-q (useful for Vim)
 stty -ixon
@@ -64,8 +64,11 @@ alias show_files="defaults write com.apple.finder AppleShowAllFiles TRUE && kill
 alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 alias pgstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 
+alias dynamo='java -Djava.library.path=./DynamoDBLocal_lib -jar DynamoDBLocal.jar -sharedDb'
+
 alias server='python -m SimpleHTTPServer'
 alias phpserver='php -S localhost:8000 system/router.php'
+
 # =============================================================================
 # GIT ALIASES
 # =============================================================================
@@ -97,33 +100,7 @@ alias gap='git add -p'
 alias gstl='git stash list'
 alias gsta='git stash apply'
 
+
 # =============================================================================
 # PATH, etc.
 # =============================================================================
-export PATH=$PATH:~/.local/bin
-export RBENV_ROOT=/usr/local/var/rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-export PATH="$HOME/.local/bin:$PATH"
-eval "$(rbenv init -)"
-
-eval "$(pyenv init -)"
-# added by Anaconda3 5.3.0 installer
-# >>> conda init >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$(CONDA_REPORT_ERRORS=false '/anaconda3/bin/conda' shell.bash hook 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    \eval "$__conda_setup"
-else
-    if [ -f "/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/anaconda3/etc/profile.d/conda.sh"
-        CONDA_CHANGEPS1=false conda activate base
-    else
-        \export PATH="/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda init <<<
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
