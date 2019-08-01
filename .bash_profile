@@ -15,7 +15,7 @@ get_git_branch() {
 }
 
 # PROMPT
-export PS1="\w \e[0m\$(get_git_branch) \n$ "
+export PS1="\e[0;31m\w \e[0m\$(get_git_branch) \n$ "
 
 # Let other programs use ctrl-s and ctrl-q (useful for Vim)
 stty -ixon
