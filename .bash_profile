@@ -15,7 +15,7 @@ get_git_branch() {
 }
 
 # PROMPT
-export PS1="\w \e[0m\$(get_git_branch) \n$ "
+export PS1="\n\w \e[0m\$(get_git_branch) \n$ "
 
 # Let other programs use ctrl-s and ctrl-q (useful for Vim)
 stty -ixon
@@ -82,3 +82,7 @@ alias ga.='git add .'
 # PATH, etc.
 # =============================================================================
 
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
