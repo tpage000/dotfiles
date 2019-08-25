@@ -27,7 +27,7 @@ Plugin 'rakr/vim-one'
 " Other
 Plugin 'scrooloose/nerdtree'              " Navigate the filesystem
 Plugin 'tpope/vim-commentary'             " Comment / uncomment lines
-Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-surround'               " Add surrounding quotes, parens, etc
 Plugin 'bling/vim-airline'                " Status bar
 Plugin 'octol/vim-cpp-enhanced-highlight' " C++ highlighting
 Plugin 'pangloss/vim-javascript'          " Javascript highlighting
@@ -41,7 +41,7 @@ Plugin 'kien/ctrlp.vim'                   " Fuzzy file, buffer, etc finder
 Plugin 'moll/vim-node'                    " Node stuff
 Plugin 'tpope/vim-rails'                  " Rails stuff
 Plugin 'jiangmiao/auto-pairs'             " Autocomplete matching braces, etc.
-Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'mustache/vim-mustache-handlebars' " Handlebars highlighting
 
 " All plugins must be added before vundle#end
 call vundle#end()
@@ -243,8 +243,8 @@ endif
 " COLOR SCHEME
 " =============================================================================
 " set background before colorscheme to get proper syntax highlighting
-set background=dark  
-colorscheme one
+set background=dark
+colorscheme badwolf
 
 " colorcolumn must be added after colorscheme, otherwise column disappears
 set colorcolumn=90
