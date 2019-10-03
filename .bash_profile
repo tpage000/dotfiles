@@ -79,5 +79,19 @@ alias gpush='git push origin master'
 alias ga.='git add .'
 
 # =============================================================================
+# TMUX ALIASES
+# =============================================================================
+alias t='tmux new -s'
+alias tk='tmux kill-session'
+alias td='tmux detach'
+alias ta='tmux attach -t'
+
+# =============================================================================
 # PATH, etc.
 # =============================================================================
+export NVM_DIR="$HOME/.nvm"
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
